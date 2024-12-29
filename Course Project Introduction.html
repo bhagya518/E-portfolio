@@ -3,86 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Commerce Logistics Project - Smart City</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>E-Commerce Logistics - Smart City Project</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9; /* Light background */
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            animation: fadeIn 2s;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            color: #616161; /* Medium grey */
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #616161;
+            margin-bottom: 10px;
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        .project-overview, .team-details, .business-cases {
+            margin-bottom: 30px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1.5s;
+        }
+
+        /* Floating Blocks */
+        .floating-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .floating-block {
+            width: 30%;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0.8;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .floating-block:hover {
+            transform: translateY(-10px);
+            opacity: 1;
+        }
+
+        .floating-block h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .floating-block p {
+            color: #616161;
+            margin-bottom: 10px;
+        }
+
+        .owner {
+            font-weight: bold;
+            color: #008CBA;
+        }
+
+        /* Image Styling */
+        .team-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-top: 10px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        /* Hover Effects */
+        .floating-block:hover {
+            cursor: pointer;
+        }
+
+        /* Animation for Sections */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 1em;
+            margin-top: 20px;
+            color: #777;
+            animation: fadeIn 2s;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Course Project Introduction: Enhancing E-Commerce Logistics and Customer Experience in a Smart City</h1>
+        <h1>Smart City Project: E-Commerce Logistics</h1>
     </header>
 
     <section class="project-overview">
-        <h2>Problem Statement</h2>
-        <p>The aim of this project is to enhance <strong>E-Commerce Logistics</strong> and <strong>Customer Experience</strong> in the context of a <strong>Smart City</strong>. By leveraging advanced algorithms, we aim to optimize several aspects of the e-commerce ecosystem, improving efficiency, customer satisfaction, and overall business performance.</p>
-    </section>
-
-    <section class="problem-space-approach">
-        <h2>Problem Space and Approach</h2>
-        <p>The problem space revolves around the challenges faced by e-commerce platforms in a smart city environment. These challenges include optimizing logistics, providing dynamic pricing, improving inventory management, ensuring security through fraud detection, and enhancing customer experience through segmentation and personalized services.</p>
-        <p>Our approach involves identifying several business cases within the e-commerce domain and applying various algorithms to solve these problems efficiently. These algorithms help streamline operations, reduce costs, and offer better customer-centric services.</p>
-    </section>
-
-    <section class="findings">
-        <h2>Findings from White Paper</h2>
-        <p>Through a white paper, we analyzed the logistics and operational inefficiencies in e-commerce systems and identified critical areas where optimization could provide substantial improvements. The smart city context further emphasizes the importance of automated and data-driven solutions that adapt to real-time changes in customer behavior, market conditions, and supply chain dynamics.</p>
-    </section>
-
-    <section class="city-design">
-        <h2>City Design and Business Case Identification</h2>
-        <p>The design of the smart city plays a significant role in shaping the business cases identified for this project. Features such as smart traffic management, real-time data collection, and IoT (Internet of Things) systems provide a wealth of information that can be used to optimize e-commerce logistics. By analyzing customer data, traffic patterns, and inventory levels, we can design algorithms to solve specific problems in the e-commerce process.</p>
-        <p>Based on this, we have identified several business cases, each focusing on different aspects of e-commerce logistics and customer experience.</p>
+        <h2 class="section-title">📌 Problem Statement</h2>
+        <p>Optimizing logistics and enhancing customer experience in a smart city using algorithms.</p>
     </section>
 
     <section class="team-details">
-        <h2>Team Details</h2>
-        <p><strong>Place:</strong> Suryanagari</p>
-        <p><strong>Team No:</strong> 04</p>
-        <p><strong>Domain:</strong> E-Commerce</p>
-        <h3>Members:</h3>
+        <h2 class="section-title">👩‍💻 Team Details</h2>
         <ul>
-            <li>Bhagyashri Hiremath</li>
-            <li>Sahana</li>
-            <li>Vachanashree</li>
-            <li>Sohan</li>
+            <li><strong>Place:</strong> Suryanagari</li>
+            <li><strong>Team No:</strong> 04</li>
+            <li><strong>Domain:</strong> E-Commerce</li>
+            <li><strong>Members:</strong> 
+                <a href="https://portfolio-link-bhagyashri.com">Bhagyashri</a>, 
+                <a href="https://portfolio-link-sahana.com">Sahana</a>, 
+                <a href="https://portfolio-link-vachanashree.com">Vachanashree</a>, 
+                <a href="https://portfolio-link-sohan.com">Sohan</a>
+            </li>
         </ul>
+        <div class="team-photos">
+            <img src="bhagyashri-photo.jpg" alt="Bhagyashri" class="team-photo">
+            <img src="sahana-photo.jpg" alt="Sahana" class="team-photo">
+            <img src="vachanashree-photo.jpg" alt="Vachanashree" class="team-photo">
+            <img src="sohan-photo.jpg" alt="Sohan" class="team-photo">
+        </div>
     </section>
 
     <section class="business-cases">
-        <h2>Business Cases and Assigned Algorithms</h2>
+        <h2 class="section-title">💡 Business Cases</h2>
+        <div class="floating-container">
+            <!-- Business Case 1 -->
+            <div class="floating-block">
+                <h3>1. Order Delivery Optimization</h3>
+                <p>Optimizes delivery routes and schedules using algorithms like Dijkstra’s, Bellman-Ford, and Floyd-Warshall.</p>
+                <p class="owner">Owner: Bhagyashri</p>
+            </div>
 
-        <h3>1. Order Delivery Optimization</h3>
-        <p><strong>Description:</strong> Optimizes delivery routes and schedules.</p>
-        <p><strong>Owner:</strong> Bhagyashri</p>
-        <p><strong>Algorithms:</strong> Dijkstra’s, Bellman-Ford, Floyd-Warshall</p>
+            <!-- Business Case 2 -->
+            <div class="floating-block">
+                <h3>2. Dynamic Pricing Optimization</h3>
+                <p>Adjusts prices in real-time to maximize profits using Quick Sort, Merge Sort, and Heap Sort.</p>
+                <p class="owner">Owner: Sahana</p>
+            </div>
 
-        <h3>2. Dynamic Pricing Optimization</h3>
-        <p><strong>Description:</strong> Adjusts prices in real-time to maximize profits.</p>
-        <p><strong>Owner:</strong> Sahana</p>
-        <p><strong>Algorithms:</strong> Quick Sort, Merge Sort, Heap Sort</p>
+            <!-- Business Case 3 -->
+            <div class="floating-block">
+                <h3>3. Customer Segmentation</h3>
+                <p>Groups customers to improve marketing strategies using Binary Search, Merge Sort, and Quick Sort.</p>
+                <p class="owner">Owner: Vachanashree</p>
+            </div>
 
-        <h3>3. Customer Segmentation</h3>
-        <p><strong>Description:</strong> Groups customers to improve marketing strategies.</p>
-        <p><strong>Owner:</strong> Vachanashree</p>
-        <p><strong>Algorithms:</strong> Binary Search, Merge Sort, Quick Sort</p>
+            <!-- Business Case 4 -->
+            <div class="floating-block">
+                <h3>4. Efficient Inventory Management</h3>
+                <p>Predicts demand to maintain optimal stock levels using Bubble Sort, Selection Sort, and Binary Search.</p>
+                <p class="owner">Owner: Sohan</p>
+            </div>
 
-        <h3>4. Efficient Inventory Management</h3>
-        <p><strong>Description:</strong> Predicts demand to maintain optimal stock levels.</p>
-        <p><strong>Owner:</strong> Sohan</p>
-        <p><strong>Algorithms:</strong> Bubble Sort, Selection Sort, Binary Search</p>
+            <!-- Business Case 5 -->
+            <div class="floating-block">
+                <h3>5. Fraud Detection</h3>
+                <p>Identifies fraudulent activities in transactions using Prim’s, Kruskal’s, and Floyd-Warshall algorithms.</p>
+                <p class="owner">Owner: Bhagyashri, Sahana</p>
+            </div>
 
-        <h3>5. Fraud Detection</h3>
-        <p><strong>Description:</strong> Identifies fraudulent activities in transactions.</p>
-        <p><strong>Owner:</strong> Bhagyashri, Sahana</p>
-        <p><strong>Algorithms:</strong> Prim’s, Kruskal’s, Floyd-Warshall</p>
-
-        <h3>6. Product Catalog Management</h3>
-        <p><strong>Description:</strong> Manages and organizes product listings.</p>
-        <p><strong>Owner:</strong> Vachanashree, Sohan</p>
-        <p><strong>Algorithms:</strong> String Matching, Linear Search, Binary Search</p>
+            <!-- Business Case 6 -->
+            <div class="floating-block">
+                <h3>6. Product Catalog Management</h3>
+                <p>Manages and organizes product listings using String Matching, Linear Search, and Binary Search.</p>
+                <p class="owner">Owner: Vachanashree, Sohan</p>
+            </div>
+        </div>
     </section>
 
     <footer>
-        <p>This document provides an overview of the project, the identified business cases, and the algorithms applied to solve these problems. The team is working collaboratively to ensure each area is optimized, thus enhancing e-commerce logistics and the overall customer experience in a smart city environment.</p>
+        <p>Crafted by Team 04 | 2024</p>
     </footer>
 </body>
 </html>
