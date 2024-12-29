@@ -15,95 +15,106 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f9; /* Light background */
-            color: #333;
+            color: #0a0a0a;
             line-height: 1.6;
-            padding: 20px;
+            padding: 40px 20px;
+            text-align: center;
         }
 
         header {
-            text-align: center;
-            margin-bottom: 20px;
-            animation: fadeIn 2s;
+            margin-bottom: 30px;
+            animation: headerPopUp 2s ease-out;
         }
 
         header h1 {
-            font-size: 2.5em;
-            color: #616161; /* Medium grey */
+            font-size: 3em;
+            color: #080808;
+            animation: scaleUp 2s ease-out;
         }
 
+        /* Section Titles */
         .section-title {
             font-size: 2em;
-            color: #616161;
+            color: #080808;
             margin-bottom: 10px;
-            animation: slideIn 1.5s ease-in-out;
+            animation: bounceInUp 1s ease-out;
         }
 
+        /* Project Overview & Team Details Layout */
         .project-overview, .team-details, .business-cases {
-            margin-bottom: 30px;
-            background: #ffffff;
+            margin-bottom: 40px;
+            background: #8b8888;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            animation: fadeInUp 1.5s;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(32, 32, 32, 0.1);
+            animation: fadeInUp 1.5s ease-out;
+            transform: scale(0.95);
         }
 
-        /* Floating Blocks */
+        /* Layout for Business Cases */
         .floating-container {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
-            flex-wrap: wrap;
+            animation: fadeInUp 2s ease-out;
         }
 
         .floating-block {
-            width: 30%;
+            background: #f3ebebea;
             padding: 20px;
-            background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, opacity 0.3s ease;
-            opacity: 0.8;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(31, 30, 30, 0.1);
+            transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+            opacity: 0.9;
             text-align: center;
-            margin-bottom: 20px;
+            position: relative;
+            will-change: transform;
         }
 
         .floating-block:hover {
-            transform: translateY(-10px);
+            transform: scale(1.05);
             opacity: 1;
         }
 
         .floating-block h3 {
             font-size: 1.5em;
-            color: #333;
-            margin-bottom: 10px;
+            color: #0c0c0c;
+            margin-bottom: 15px;
         }
 
         .floating-block p {
-            color: #616161;
-            margin-bottom: 10px;
+            color: #0f0f0f;
+            margin-bottom: 15px;
         }
 
         .owner {
             font-weight: bold;
-            color: #008CBA;
+            color: #050505;
         }
 
-        /* Image Styling */
+        /* Team Photos */
+        .team-photos {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
         .team-photo {
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
-            margin-top: 10px;
             object-fit: cover;
-            margin-bottom: 20px;
+            animation: teamPhotoPopUp 1s ease-out;
         }
 
         /* Hover Effects */
         .floating-block:hover {
             cursor: pointer;
+            background-color: #faf9f5; /* Change color on hover */
         }
 
-        /* Animation for Sections */
+        /* Animation Keyframes */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -116,6 +127,54 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes headerPopUp {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleUp {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes bounceInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            60% {
+                opacity: 1;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes teamPhotoPopUp {
+            from {
+                opacity: 0;
                 transform: translateY(30px);
             }
             to {
@@ -124,23 +183,11 @@
             }
         }
 
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
         footer {
-            text-align: center;
             font-size: 1em;
-            margin-top: 20px;
-            color: #777;
-            animation: fadeIn 2s;
+            margin-top: 50px;
+            color: #111111;
+            animation: fadeInUp 2s ease-out;
         }
     </style>
 </head>
@@ -152,6 +199,8 @@
     <section class="project-overview">
         <h2 class="section-title">📌 Problem Statement</h2>
         <p>Optimizing logistics and enhancing customer experience in a smart city using algorithms.</p>
+        <p><strong>Description:</strong>The project aims to optimize e-commerce logistics in a smart city by using advanced algorithms to enhance delivery routes, dynamic pricing, inventory management, and fraud detection. The goal is to improve operational efficiency, reduce costs, and provide a better customer experience. Key techniques include Dijkstra’s and Floyd-Warshall for routing, and machine learning for fraud detection. This comprehensive solution will streamline logistics and increase overall system efficiency.</p>
+
     </section>
 
     <section class="team-details">
@@ -161,14 +210,14 @@
             <li><strong>Team No:</strong> 04</li>
             <li><strong>Domain:</strong> E-Commerce</li>
             <li><strong>Members:</strong> 
-                <a href= "https://bhagya518.github.io/E-portfolio/">Bhagyashri</a>, 
+                <a href="https://bhagya518.github.io/E-portfolio/">Bhagyashri</a>, 
                 <a href="https://portfolio-link-sahana.com">Sahana</a>, 
                 <a href="https://portfolio-link-vachanashree.com">Vachanashree</a>, 
                 <a href="https://portfolio-link-sohan.com">Sohan</a>
             </li>
         </ul>
         <div class="team-photos">
-            <img src="bhagyashri-photo.jpg" alt="Bhagyashri" class="team-photo">
+            <img src="E:\Local Disk\bhagyashri hiremath.png" alt="Bhagyashri" class="team-photo">
             <img src="sahana-photo.jpg" alt="Sahana" class="team-photo">
             <img src="vachanashree-photo.jpg" alt="Vachanashree" class="team-photo">
             <img src="sohan-photo.jpg" alt="Sohan" class="team-photo">
@@ -225,5 +274,23 @@
     <footer>
         <p>Crafted by Team 04 | 2024</p>
     </footer>
+
+    <script>
+        const blocks = document.querySelectorAll('.floating-block');
+
+        blocks.forEach(block => {
+            block.addEventListener('mousemove', (e) => {
+                const blockRect = block.getBoundingClientRect();
+                const x = e.clientX - blockRect.left;
+                const y = e.clientY - blockRect.top;
+
+                block.style.transform = `rotateX(${(y - blockRect.height / 2) / 20}deg) rotateY(${(x - blockRect.width / 2) / 20}deg)`;
+            });
+
+            block.addEventListener('mouseleave', () => {
+                block.style.transform = 'none';
+            });
+        });
+    </script>
 </body>
 </html>
