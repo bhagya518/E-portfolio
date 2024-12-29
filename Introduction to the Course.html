@@ -4,7 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Design and Analysis of Algorithms - Course Overview</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+            color: #333;
+        }
+
+        header {
+            background: #555;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Style for clickable blocks */
+        .block {
+            background-color: #666;
+            color: #fff;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .block:hover {
+            background-color: #777;
+        }
+
+        .content {
+            display: none;
+            padding: 15px;
+            background-color: #dcdcdc;
+            margin-top: 10px;
+            border-left: 5px solid #555;
+            animation: slide-in 0.5s ease-out;
+        }
+
+        /* Slide-in animation */
+        @keyframes slide-in {
+            0% {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        h1, h2, p {
+            animation: pop-up 0.6s ease-out;
+        }
+
+        /* Pop-up effect for heading */
+        @keyframes pop-up {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        footer {
+            background: #555;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -13,59 +92,85 @@
     </header>
 
     <section class="course-introduction">
-        <h2>Introduction</h2>
-        <p>The course <strong>Design and Analysis of Algorithms</strong> emphasizes the principles of designing efficient algorithms, analyzing their complexity, and selecting the appropriate data structures to optimize performance. Algorithms are fundamental to computer science and are essential in software development, enabling data processing in various applications.</p>
+        <div class="block" onclick="toggleContent('intro-content')">
+            <h2>Introduction</h2>
+        </div>
+        <div id="intro-content" class="content">
+            <p>The course <strong>Design and Analysis of Algorithms</strong> emphasizes the principles of designing efficient algorithms, analyzing their complexity, and selecting the appropriate data structures to optimize performance. Algorithms are fundamental to computer science and are essential in software development, enabling data processing in various applications.</p>
+        </div>
     </section>
 
     <section class="course-content">
-        <h2>What is the course about?</h2>
-        <ul>
-            <li><strong>Algorithm Design Techniques:</strong> Exploring methodologies like divide-and-conquer, dynamic programming, greedy algorithms, backtracking, and branch-and-bound to solve complex problems.</li>
-            <li><strong>Algorithm Analysis:</strong> Measuring time and space complexity, understanding Big-O, Omega, and Theta notations, and evaluating algorithmic efficiency to optimize solutions.</li>
-            <li><strong>Optimization Problems:</strong> Tackling NP-completeness and heuristic approaches for problems that lack polynomial-time solutions.</li>
-            <li><strong>Applications and Implementation:</strong> Applying algorithms to real-world problems such as sorting, searching, graph traversal, and network optimization.</li>
-        </ul>
+        <div class="block" onclick="toggleContent('course-content')">
+            <h2>What is the course about?</h2>
+        </div>
+        <div id="course-content" class="content">
+            <ul>
+                <li><strong>Algorithm Design Techniques:</strong> Exploring methodologies like divide-and-conquer, dynamic programming, greedy algorithms, backtracking, and branch-and-bound to solve complex problems.</li>
+                <li><strong>Algorithm Analysis:</strong> Measuring time and space complexity, understanding Big-O, Omega, and Theta notations, and evaluating algorithmic efficiency to optimize solutions.</li>
+                <li><strong>Optimization Problems:</strong> Tackling NP-completeness and heuristic approaches for problems that lack polynomial-time solutions.</li>
+                <li><strong>Applications and Implementation:</strong> Applying algorithms to real-world problems such as sorting, searching, graph traversal, and network optimization.</li>
+            </ul>
+        </div>
     </section>
 
     <section class="data-structures-algorithms">
-        <h2>What kind of data structures and algorithms have you studied?</h2>
+        <div class="block" onclick="toggleContent('ds-algorithms')">
+            <h2>What kind of data structures and algorithms have you studied?</h2>
+        </div>
+        <div id="ds-algorithms" class="content">
+            <h3>Data Structures</h3>
+            <ul>
+                <li><strong>Linear Data Structures:</strong> Arrays, linked lists, stacks, and queues.</li>
+                <li><strong>Hierarchical Data Structures:</strong> Binary trees, binary search trees, AVL trees, 2-3 trees, Red-Black trees, heaps, and tries.</li>
+                <li><strong>Graph Data Structures:</strong> Adjacency lists, adjacency matrices, and edge lists.</li>
+                <li><strong>Hashing and Hash Tables:</strong> Efficient key-value storage and retrieval.</li>
+                <li><strong>Specialized Data Structures:</strong> Union-find (disjoint-set), segment trees, and Fenwick trees.</li>
+            </ul>
 
-        <h3>Data Structures</h3>
-        <ul>
-            <li><strong>Linear Data Structures:</strong> Arrays, linked lists, stacks, and queues.</li>
-            <li><strong>Hierarchical Data Structures:</strong> Binary trees, binary search trees, AVL trees, 2-3 trees, Red-Black trees, heaps, and tries.</li>
-            <li><strong>Graph Data Structures:</strong> Adjacency lists, adjacency matrices, and edge lists.</li>
-            <li><strong>Hashing and Hash Tables:</strong> Efficient key-value storage and retrieval.</li>
-            <li><strong>Specialized Data Structures:</strong> Union-find (disjoint-set), segment trees, and Fenwick trees.</li>
-        </ul>
-
-        <h3>Algorithms</h3>
-        <ul>
-            <li><strong>Sorting Algorithms:</strong> Bubble sort, selection sort, insertion sort, Merge sort, quicksort, heap sort.</li>
-            <li><strong>Searching Algorithms:</strong> Binary search, depth-first search (DFS), breadth-first search (BFS).</li>
-            <li><strong>Graph Algorithms:</strong> Dijkstra’s algorithm, Kruskal’s algorithm, Prim’s algorithm, Floyd-Warshall, Bellman-Ford algorithm.</li>
-            <li><strong>String Matching Algorithms:</strong> Knuth-Morris-Pratt (KMP), Rabin-Karp, brute force string matching, Boyer-Moore string matching.</li>
-            <li><strong>Dynamic Programming Techniques:</strong> Solving problems like the knapsack problem, longest common subsequence (LCS), and Travelling Salesperson Problem (TSP).</li>
-            <li><strong>Special Algorithms:</strong> Strassen’s Matrix Multiplication, Fake Coin Problem, Huffman Coding.</li>
-        </ul>
+            <h3>Algorithms</h3>
+            <ul>
+                <li><strong>Sorting Algorithms:</strong> Bubble sort, selection sort, insertion sort, Merge sort, quicksort, heap sort.</li>
+                <li><strong>Searching Algorithms:</strong> Binary search, depth-first search (DFS), breadth-first search (BFS).</li>
+                <li><strong>Graph Algorithms:</strong> Dijkstra’s algorithm, Kruskal’s algorithm, Prim’s algorithm, Floyd-Warshall, Bellman-Ford algorithm.</li>
+                <li><strong>String Matching Algorithms:</strong> Knuth-Morris-Pratt (KMP), Rabin-Karp, brute force string matching, Boyer-Moore string matching.</li>
+                <li><strong>Dynamic Programming Techniques:</strong> Solving problems like the knapsack problem, longest common subsequence (LCS), and Travelling Salesperson Problem (TSP).</li>
+                <li><strong>Special Algorithms:</strong> Strassen’s Matrix Multiplication, Fake Coin Problem, Huffman Coding.</li>
+            </ul>
+        </div>
     </section>
 
     <section class="real-world-applications">
-        <h2>How do you connect the course with real-time applications?</h2>
-        <p>Algorithms are the backbone of modern technology, and their applications span almost every industry. Some real-world connections include:</p>
-        <ul>
-            <li><strong>E-commerce:</strong> Sorting and searching algorithms power recommendation systems, price comparisons, and inventory management.</li>
-            <li><strong>Social Networks:</strong> Graph algorithms enable friend suggestions, community detection, and shortest path recommendations.</li>
-            <li><strong>Healthcare:</strong> Dynamic programming and optimization algorithms help in genome sequencing and scheduling surgeries.</li>
-            <li><strong>Navigation and Logistics:</strong> Shortest path algorithms like Dijkstra's are fundamental in GPS systems and route planning for deliveries.</li>
-            <li><strong>Cybersecurity:</strong> Hashing and cryptographic algorithms secure sensitive data.</li>
-            <li><strong>Machine Learning:</strong> Algorithms like gradient descent optimize learning models.</li>
-            <li><strong>Gaming:</strong> Backtracking and heuristic algorithms solve puzzles and generate intelligent moves in AI-driven games.</li>
-        </ul>
+        <div class="block" onclick="toggleContent('real-world')">
+            <h2>How do you connect the course with real-time applications?</h2>
+        </div>
+        <div id="real-world" class="content">
+            <p>Algorithms are the backbone of modern technology, and their applications span almost every industry. Some real-world connections include:</p>
+            <ul>
+                <li><strong>E-commerce:</strong> Sorting and searching algorithms power recommendation systems, price comparisons, and inventory management.</li>
+                <li><strong>Social Networks:</strong> Graph algorithms enable friend suggestions, community detection, and shortest path recommendations.</li>
+                <li><strong>Healthcare:</strong> Dynamic programming and optimization algorithms help in genome sequencing and scheduling surgeries.</li>
+                <li><strong>Navigation and Logistics:</strong> Shortest path algorithms like Dijkstra's are fundamental in GPS systems and route planning for deliveries.</li>
+                <li><strong>Cybersecurity:</strong> Hashing and cryptographic algorithms secure sensitive data.</li>
+                <li><strong>Machine Learning:</strong> Algorithms like gradient descent optimize learning models.</li>
+                <li><strong>Gaming:</strong> Backtracking and heuristic algorithms solve puzzles and generate intelligent moves in AI-driven games.</li>
+            </ul>
+        </div>
     </section>
 
     <footer>
         <p>This course builds a solid theoretical foundation while equipping students with the skills to implement and apply algorithms in diverse real-world scenarios.</p>
     </footer>
+
+    <script>
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>
