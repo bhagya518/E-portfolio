@@ -3,169 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bhagyashri Hiremath - Portfolio</title>
+    <title>Course Learning Reflections: Design and Analysis of Algorithms</title>
     <style>
+        /* General styling */
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: #f1f1f1;
-            color: #333;
             margin: 0;
-            padding: 0;
-            opacity: 0;
-            animation: fadeIn 1s forwards;
+            padding: 20px;
+            background-color: #f4f4f4;
         }
 
         header {
-            background-color: #555;
-            color: #fff;
             text-align: center;
-            padding: 20px;
-            animation: slideIn 1s ease-out;
+            margin-bottom: 20px;
         }
 
-        header h1 {
-            font-size: 2.5rem;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            animation: fadeIn 2.5s ease-in-out;
+        h1 {
+            color: #333;
         }
 
         section {
-            padding: 20px;
-            margin: 10px;
-            background-color: #e0e0e0;
+            margin: 20px 0;
+            padding: 10px;
+            background: #fff;
             border-radius: 8px;
-            opacity: 0;
-            animation: slideUp 0.8s ease-out forwards;
-            animation-delay: 0.5s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
+        /* Heading animations */
         h2 {
-            color: #444;
-            font-size: 1.8rem;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        h3 {
-            color: #555;
-            font-size: 1.4rem;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul li {
-            font-size: 1.1rem;
-            padding: 5px 0;
-        }
-
-        a {
-            color: #0066cc;
-            text-decoration: none;
+            cursor: pointer;
+            color: rgb(60, 61, 61);
             transition: color 0.3s ease;
         }
 
-        a:hover {
-            color: hsla(24, 100%, 50%, 0.493);
-            text-decoration: underline;
+        h2:hover {
+            color: hsl(120, 2%, 9%);
         }
 
-        footer {
-            background-color: #555;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-            animation: fadeIn 2.5s ease-in-out;
-        }
-
-        footer p {
-            font-size: 1.2rem;
-        }
-
-        /* Keyframe Animations */
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+        /* Slide-in animation */
+        .content {
+            display: none;
+            animation: slideIn 1s ease forwards, colorChange 3s infinite;
         }
 
         @keyframes slideIn {
-            0% { transform: translateY(-50px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
 
-        @keyframes slideUp {
-            0% { transform: translateY(30px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
+        @keyframes colorChange {
+            0% { background-color: #f4f4f4; }
+            25% { background-color: #ff9b9b; }
+            50% { background-color: #ffeb3b; }
+            75% { background-color: #90ee90; }
+            100% { background-color: #ff9b9b; }
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Image styling */
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        .emoji {
+            font-size: 1.5rem;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Hi there! 👋</h1>
-        <p>I'm Bhagyashri Hiremath, a Computer Science Engineering student at KLE Technological University, Hubli. 🚀</p>
+        <h1 style="color: hsl(204, 100%, 25%);">Course Learning Reflections: Design and Analysis of Algorithms</h1>
     </header>
 
-    <section class="about-me">
-        <h2>🌟 About Me</h2>
-        <p>I’m on a mission to explore the fascinating world of technology and solve real-world problems with data structures and algorithms. From diving deep into code logic to unraveling the secrets of databases, I’m always ready to learn, grow, and contribute! 💡</p>
-        <p><strong>Name:</strong> Bhagyashri Hiremath</p>
-        <p><strong>USN:</strong> 01fe23bcs191</p>
-        <p><strong>Instructor:</strong> Ms.Arundhati</p>
+    <section class="introduction">
+        <p>This document contains my reflections and insights from the <strong>Design and Analysis of Algorithms</strong> course. It covers several key topics that I have learned throughout the course and how they relate to both theoretical and practical aspects of algorithm design and implementation. Understanding these principles is essential for solving real-world problems efficiently and effectively. <span class="emoji">💡</span></p>
     </section>
 
-    <section class="academic-highlights">
-        <h2>🎓 Academic Highlights</h2>
-        <p>📘 CGPA: 9.44 (First Year)</p>
+    <section class="problem-nature">
+        <h2 onclick="toggleContent(this)">1. What are the Kinds of Problems We See in Nature? (Iteration, Recursion, Backtracking)</h2>
+        <div class="content">
+            <p>Problems in nature often exhibit patterns that can be categorized into iterative, recursive, and backtracking approaches. These problem-solving techniques allow us to address challenges systematically and logically:</p>
+            <ul>
+                <li><strong>Iteration</strong>: This involves repeating a specific operation multiple times, such as looping over an array to find a maximum value. Example: A for-loop summing the elements in an array. <span class="emoji">🔄</span></li>
+                <li><strong>Recursion</strong>: A problem-solving technique where a function calls itself with smaller inputs until it reaches a base case. Commonly used in scenarios like navigating hierarchical structures (e.g., directory traversal). <span class="emoji">♻️</span></li>
+                <li><strong>Backtracking</strong>: This strategy explores all possible solutions to a problem and retracts ("backtracks") when a path fails. Example: Solving puzzles like Sudoku or finding a path in a maze. <span class="emoji">🔍</span></li>
+            </ul>
+            <p>Each approach has its strengths and is chosen based on the problem structure.</p>
+            <img src="recursion.png" alt="Iteration vs Recursion Illustration">
+        </div>
     </section>
 
-    <section class="current-exploring">
-        <h2>🌱 What I'm Currently Exploring</h2>
-        <ul>
-            <li>Crafting innovative solutions using data structures and algorithms</li>
-            <li>Understanding the nuances of database design and optimization</li>
-            <li>Experimenting with SQL queries for effective data analysis</li>
-        </ul>
+    <section class="efficiency">
+        <h2 onclick="toggleContent(this)">2. What is Space and Time Efficiency? Why are They Important? Explain the Different Classes of Problems and Orders of Growth</h2>
+        <div class="content">
+            <p>Efficiency is a key factor in algorithm design:</p>
+            <ul>
+                <li><strong>Time Efficiency</strong>: Measures how quickly an algorithm executes as the input size grows. Example: Linear search has a time complexity of O(n), while binary search is O(log n).</li>
+                <li><strong>Space Efficiency</strong>: Measures the amount of memory an algorithm uses. Example: An iterative algorithm usually requires less space compared to its recursive counterpart.</li>
+            </ul>
+            <p>Classes of problems by growth order:</p>
+            <ul>
+                <li><strong>Constant Time (O(1))</strong>: Accessing an array element by index.</li>
+                <li><strong>Logarithmic Time (O(log n))</strong>: Binary search in a sorted array.</li>
+                <li><strong>Linear Time (O(n))</strong>: Traversing an array.</li>
+                <li><strong>Quadratic Time (O(n²))</strong>: Nested loops, such as in bubble sort.</li>
+                <li><strong>Exponential Time (O(2^n))</strong>: Solving the traveling salesman problem using brute force.</li>
+            </ul>
+            <p>Understanding efficiency helps optimize algorithms for large-scale systems and datasets.</p>
+        </div>
     </section>
 
-    <section class="technologies">
-        <h2>💻 Technologies in My Toolkit</h2>
-        <h3>Programming Languages:</h3>
-        <ul>
-            <li>💻 C/C++ – My foundation for solving complex problems</li>
-        </ul>
-
-        <h3>Databases:</h3>
-        <ul>
-            <li>🗂️ MySQL – For building relational models and writing efficient SQL queries</li>
-        </ul>
-
-        <h3>Development Tools:</h3>
-        <ul>
-            <li>🛠️ VS Code, Code::Blocks, Google Colab – My go-to companions for coding and debugging</li>
-        </ul>
+    <section class="design-principles">
+        <h2 onclick="toggleContent(this)">3. Takeaways from Different Design Principles from Chapter 2</h2>
+        <div class="content">
+            <p>Key design principles covered include:</p>
+            <ul>
+                <li><strong>Divide and Conquer</strong>: Splitting a problem into smaller parts, solving them independently, and combining results. Example: Merge Sort for sorting arrays efficiently.</li>
+                <li><strong>Greedy Algorithms</strong>: Selecting the best choice at each step. Example: Huffman coding for data compression.</li>
+                <li><strong>Dynamic Programming</strong>: Storing results of sub-problems to avoid redundant calculations. Example: Solving the Fibonacci sequence in linear time.</li>
+                <li><strong>Backtracking</strong>: Exploring all possibilities by building solutions incrementally. Example: N-Queens problem.</li>
+            </ul>
+            <p>Each technique addresses specific types of problems and provides tools to optimize solutions.</p>
+        </div>
     </section>
 
-    <section class="contact">
-        <h2>🎯 Why Connect with Me?</h2>
-        <p>I’m not just a student—I’m a curious mind who loves discussing tech, sharing ideas, and collaborating on impactful projects. Let's connect and build something amazing together! 🌟</p>
-        
-        <h2>📫 Where to Find Me</h2>
-        <ul>
-            <li>Email: <a href="mailto:bhagyashrihiremath11@gmail.com">bhagyashrihiremath11@gmail.com</a></li>
-            <li>LinkedIn: <a href="https://linkedin.com/in/bhagyashri-hiremath">linkedin.com/in/bhagyashri-hiremath</a></li>
-            <li>GitHub: <a href="https://github.com/bhagya518">github.com/bhagya518</a></li>
-        </ul>
-    </section>
-
+    <!-- Additional sections will follow the same pattern -->
+    
     <footer>
-        <p>Thank you for stopping by my profile! Feel free to connect or drop a message—I'd love to hear from you. 😊</p>
+        <p>Page created with insights from the Design and Analysis of Algorithms course. <span class="emoji">📚</span></p>
     </footer>
+
+    <script>
+        // Toggle the display of content when a heading is clicked
+        function toggleContent(element) {
+            const content = element.nextElementSibling;
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
 </body>
 </html>
