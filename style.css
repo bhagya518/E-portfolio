@@ -18,9 +18,6 @@ header {
     background-color: #2c3e50;
     color: #fff;
     padding: 20px 0;
-}
-
-header .container {
     text-align: center;
 }
 
@@ -39,6 +36,9 @@ header p {
     padding: 40px;
     margin-bottom: 20px;
     border-radius: 8px;
+    display: inline-block; /* Makes this a block element but behaves like an inline element */
+    width: 100%;
+    margin: 10px 0;
 }
 
 .welcome-section h2 {
@@ -68,11 +68,13 @@ header p {
     color: #2c3e50;
     font-weight: bold;
     font-size: 1.1em;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.2s;
+    cursor: pointer;
 }
 
 .navigation a:hover {
     color: #e74c3c;
+    transform: scale(1.1);
 }
 
 /* Contact Section */
@@ -80,6 +82,7 @@ header p {
     background-color: #ecf0f1;
     padding: 40px;
     border-radius: 8px;
+    clear: both; /* Ensures the section clears the float */
 }
 
 .contact h2 {
@@ -90,6 +93,31 @@ header p {
 .contact p {
     font-size: 1.1em;
     color: #555;
+}
+
+/* Floating Blocks */
+.floating-block {
+    float: left; /* Float the blocks left */
+    width: 30%;
+    margin: 0 15px 20px 0; /* Spacing between blocks */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer; /* Change cursor to indicate interactivity */
+    transition: all 0.3s ease-in-out;
+}
+
+.floating-block:hover {
+    transform: translateY(-10px); /* Hover effect: move the block up */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add more shadow on hover */
+}
+
+/* Clearfix for Floating Elements */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 /* Footer Section */
@@ -103,10 +131,4 @@ footer {
 
 footer p {
     font-size: 1em;
-}
-
-    color: white;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
 }
