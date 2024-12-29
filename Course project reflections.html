@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Learning Reflections: Design and Analysis of Algorithms</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Course Learning Reflections: Design and Analysis of Algorithms</h1>
+    </header>
+
+    <section class="introduction">
+        <p>This document contains my reflections and insights from the <strong>Design and Analysis of Algorithms</strong> course. It covers several key topics that I have learned throughout the course and how they relate to both theoretical and practical aspects of algorithm design and implementation.</p>
+    </section>
+
+    <section class="problem-nature">
+        <h2>1. What are the Kinds of Problems We See in Nature? (Iteration, Recursion, Backtracking)</h2>
+        <p>In nature, problems are often recursive in nature, and we can solve them by applying <strong>iteration</strong> or <strong>recursion</strong> depending on the problem's structure. For example:</p>
+        <ul>
+            <li><strong>Iteration</strong> is used when a problem involves repeating a set of instructions until a certain condition is met, like iterating over an array or performing operations multiple times.</li>
+            <li><strong>Recursion</strong> is used in problems that can be broken down into smaller sub-problems of the same type, such as in tree traversals or the famous <strong>Tower of Hanoi</strong> problem.</li>
+            <li><strong>Backtracking</strong> involves trying all possible solutions and discarding those that don’t work, often used in problems like the <strong>N-Queens problem</strong> or <strong>Sudoku Solver</strong>.</li>
+        </ul>
+    </section>
+
+    <section class="efficiency">
+        <h2>2. What is Space and Time Efficiency? Why are They Important? Explain the Different Classes of Problems and Orders of Growth</h2>
+        <p><strong>Time Efficiency</strong> refers to how the running time of an algorithm grows with the size of the input. It's essential for ensuring that an algorithm can handle large inputs within a reasonable timeframe. Common time complexities include:</p>
+        <ul>
+            <li>O(1): Constant time</li>
+            <li>O(log n): Logarithmic time</li>
+            <li>O(n): Linear time</li>
+            <li>O(n^2): Quadratic time</li>
+            <li>O(2^n): Exponential time</li>
+        </ul>
+        <p><strong>Space Efficiency</strong> is about how much memory an algorithm uses. This is important because excessive space usage can limit an algorithm's scalability, especially when handling large datasets.</p>
+        
+        <h3>Classes of Problems and Orders of Growth:</h3>
+        <ul>
+            <li><strong>P</strong> (Polynomial time): Problems that can be solved in a reasonable amount of time, like sorting or searching.</li>
+            <li><strong>NP</strong> (Non-deterministic Polynomial time): Problems for which a solution can be verified in polynomial time but may not necessarily be solvable in polynomial time.</li>
+            <li><strong>NP-complete</strong>: Problems that are both NP and NP-hard, meaning they are the hardest problems in NP.</li>
+            <li><strong>NP-hard</strong>: Problems that are at least as hard as the hardest problems in NP, but they might not belong to NP themselves.</li>
+        </ul>
+    </section>
+
+    <section class="design-principles">
+        <h2>3. Takeaways from Different Design Principles from Chapter 2</h2>
+        <ul>
+            <li><strong>Divide and Conquer</strong>: Breaking a problem into smaller sub-problems, solving them independently, and combining their results. Used in algorithms like <strong>Merge Sort</strong> and <strong>Quick Sort</strong>.</li>
+            <li><strong>Greedy Algorithms</strong>: Making locally optimal choices at each step with the hope of finding a global optimum. Applied in algorithms like <strong>Kruskal’s Algorithm</strong> and <strong>Huffman Coding</strong>.</li>
+            <li><strong>Dynamic Programming</strong>: Solving problems by breaking them down into simpler sub-problems and storing the results to avoid redundant computations. Useful for problems like <strong>Knapsack</strong> and <strong>Longest Common Subsequence</strong>.</li>
+            <li><strong>Backtracking</strong>: Trying all possible solutions and backing up when a solution is found to be invalid, applied in problems like the <strong>Travelling Salesperson Problem</strong> and <strong>Sudoku Solver</strong>.</li>
+        </ul>
+    </section>
+
+    <section class="tree-structures">
+        <h2>4. The Hierarchical Data and How Different Tree Data Structures Solve and Optimize Over Problem Scenarios</h2>
+        <p><strong>Tree Data Structures</strong> are hierarchical and efficient for searching, inserting, and deleting elements. Different types of trees solve problems in different ways:</p>
+        <ul>
+            <li><strong>Binary Search Tree (BST)</strong>: Efficient for searching and maintaining ordered data.</li>
+            <li><strong>AVL Tree</strong>: A self-balancing binary search tree, ensuring O(log n) operations.</li>
+            <li><strong>2-3 Tree</strong>: A balanced search tree, useful in databases for efficient retrieval.</li>
+            <li><strong>Red-Black Tree</strong>: A balanced binary search tree with additional properties to guarantee balanced height.</li>
+            <li><strong>Heap</strong>: A binary tree used for implementing priority queues, where the parent node is either greater than (max heap) or smaller than (min heap) its child nodes.</li>
+            <li><strong>Trie</strong>: A tree-like structure used for efficient retrieval of keys, often used in autocomplete systems.</li>
+        </ul>
+    </section>
+
+    <section class="array-query">
+        <h2>5. The Need for Array Query Algorithms and Their Implications</h2>
+        <p>Array query algorithms are important in many real-world applications, such as:</p>
+        <ul>
+            <li><strong>Range Queries</strong>: Algorithms like <strong>Segment Trees</strong> and <strong>Fenwick Trees (Binary Indexed Trees)</strong> allow us to efficiently query ranges in arrays, useful in applications like database indexing.</li>
+            <li><strong>Search and Update Operations</strong>: Efficient searching algorithms (like <strong>Binary Search</strong>) and update operations are crucial for databases, search engines, and real-time applications.</li>
+        </ul>
+    </section>
+
+    <section class="trees-vs-graphs">
+        <h2>6. Differentiate Between Trees and Graphs and Their Traversals. The Applications of Each</h2>
+        <p><strong>Trees</strong>: A hierarchical structure where each node has a single parent. They are used in databases (for indexing), file systems, and parsing expressions.</p>
+        <p><strong>Graphs</strong>: A more generalized structure where nodes can be connected to multiple other nodes. They are used in social networks, transportation systems, and web crawlers.</p>
+        <h3>Traversals:</h3>
+        <ul>
+            <li><strong>Trees</strong>: Pre-order, In-order, Post-order.</li>
+            <li><strong>Graphs</strong>: Depth-First Search (DFS) and Breadth-First Search (BFS).</li>
+        </ul>
+    </section>
+
+    <section class="sorting-searching">
+        <h2>7. Deliberate on Sorting and Searching Algorithms, the Technique Behind Each, and How They Connect to the Real World</h2>
+        <p><strong>Sorting Algorithms</strong>: Algorithms like <strong>Merge Sort</strong>, <strong>Quick Sort</strong>, and <strong>Heap Sort</strong> are essential for organizing data in applications ranging from search engines to e-commerce platforms.</p>
+        <p><strong>Searching Algorithms</strong>: <strong>Binary Search</strong> and <strong>Linear Search</strong> are fundamental for retrieving information from sorted and unsorted datasets, respectively. They are used in search engines, databases, and even AI systems for decision-making.</p>
+    </section>
+
+    <section class="graph-algorithms">
+        <h2>8. Discuss the Importance of Graph Algorithms with Respect to Spanning Trees and Shortest Paths</h2>
+        <p><strong>Spanning Trees</strong>: Algorithms like <strong>Kruskal’s</strong> and <strong>Prim’s</strong> are used to find the minimum spanning tree of a graph, useful in network design, such as designing the least-cost cable network.</p>
+        <p><strong>Shortest Path Algorithms</strong>: <strong>Dijkstra’s</strong> and <strong>Bellman-Ford</strong> are used to find the shortest path between nodes, which is essential in applications like GPS navigation systems, network routing, and logistics.</p>
+    </section>
+
+    <section class="design-techniques">
+        <h2>9. Discuss the Different Studied Algorithm Design Techniques</h2>
+        <ul>
+            <li><strong>Divide and Conquer</strong></li>
+            <li><strong>Greedy Algorithms</strong></li>
+            <li><strong>Dynamic Programming</strong></li>
+            <li><strong>Backtracking</strong></li>
+        </ul>
+        <p>Each technique has its strengths and is chosen based on the nature of the problem, data size, and required efficiency.</p>
+    </section>
+
+    <footer>
+        <p>These reflections are based on my understanding and learning throughout the course. Each concept has helped shape my understanding of algorithm design and analysis, and their applications in solving real-world problems.</p>
+    </footer>
+</body>
+</html>
