@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        .algorithm {
+            margin: 20px 0;
+            padding: 15px;
+            background: linear-gradient(145deg, #e6f0f5, #ffffff);
+            border-radius: 12px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(255, 255, 255, 0.8);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .algorithm:hover {
+            transform: scale(1.03);
+            background: linear-gradient(145deg, #d6e9f5, #ffffff);
+        }
+        h2 {
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 16px;
+            color: #2d3436;
+            line-height: 1.6;
+        }
+        .button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .button:hover {
+            background-color: #2e86c1;
+            transform: translateY(-3px);
+        }
+        #prims, #kruskals, #floydWarshall {
+            margin-top: 10px;
+            padding: 10px;
+            background: #e0f7fa;
+            border-radius: 5px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fraud Detection</h1>
+    <p>Fraud detection involves analyzing transaction data to identify irregular patterns that indicate fraudulent activities. Algorithms like Prim's, Kruskal's, and Floyd-Warshall can help detect unusual patterns or connections in networks, aiding in the identification of fraudulent activities.</p>
+
+    <div class="algorithm">
+        <h2>Prim's Algorithm</h2>
+        <p>Prim's Algorithm is a greedy algorithm used to find the Minimum Spanning Tree (MST) of a graph. By starting with a single node and progressively adding the smallest edge connecting it to the unvisited nodes, it creates a tree that spans all the nodes with the minimum possible total weight.</p>
+        
+        <p>In fraud detection, Prim's Algorithm can help identify minimal connections in a network of transactions. By analyzing these connections, suspicious nodes or clusters of transactions that deviate from normal patterns can be detected.</p>
+        
+        <a href="javascript:void(0);" class="button" onclick="viewCode('prims')">View Code Implementation</a>
+        
+        <div id="prims">
+            <a href="https://raw.githubusercontent.com/bhagya518/E-portfolio/main/Prim%20Algorithm.cpp" target="_blank">Click here to view Prim's Algorithm Code</a>
+        </div>
+    </div>
+
+    <div class="algorithm">
+        <h2>Kruskal's Algorithm</h2>
+        <p>Kruskal's Algorithm is another greedy algorithm for finding the MST of a graph. It sorts all the edges in ascending order and adds the smallest edge to the tree, ensuring no cycles are formed. This process continues until all nodes are connected.</p>
+        
+        <p>In fraud detection, Kruskal's Algorithm can be used to analyze and visualize transaction networks. It helps identify connections and clusters in the data that could indicate coordinated fraudulent activities, such as multiple transactions originating from a single source.</p>
+        
+        <a href="javascript:void(0);" class="button" onclick="viewCode('kruskals')">View Code Implementation</a>
+        
+        <div id="kruskals">
+            <a href="https://raw.githubusercontent.com/bhagya518/E-portfolio/main/Kruskal%20Algorithm.cpp" target="_blank">Click here to view Kruskal's Algorithm Code</a>
+        </div>
+    </div>
+
+    <div class="algorithm">
+        <h2>Floyd-Warshall Algorithm</h2>
+        <p>The Floyd-Warshall Algorithm is a dynamic programming algorithm used to find the shortest paths between all pairs of nodes in a graph. It iteratively considers all possible intermediate nodes and updates the shortest paths accordingly.</p>
+        
+        <p>For fraud detection, Floyd-Warshall can analyze transaction networks to detect anomalies. By calculating the shortest paths, it can uncover indirect relationships or transactions that form suspicious loops or clusters, highlighting potential fraud.</p>
+        
+        <a href="javascript:void(0);" class="button" onclick="viewCode('floydWarshall')">View Code Implementation</a>
+        
+        <div id="floydWarshall">
+            <a href="https://raw.githubusercontent.com/bhagya518/E-portfolio/main/Floyd's%20Algorithm.cpp" target="_blank">Click here to view Floyd-Warshall Algorithm Code</a>
+        </div>
+    </div>
+
+    <script>
+        function viewCode(algorithm) {
+            const element = document.getElementById(algorithm);
+            element.style.display = element.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</body>
+</html>
