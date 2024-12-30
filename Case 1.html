@@ -8,34 +8,66 @@
         body {
             font-family: Arial, sans-serif;
             margin: 40px;
-            background-color: #f4f4f4;
+            background-color: #f0f4f8;
+        }
+        h1 {
+            text-align: center;
+            color: #2a4d69;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
         }
         .algorithm {
             margin: 20px 0;
-            padding: 10px;
-            background-color: #b9b3b3;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            background: linear-gradient(145deg, #d9e6f2, #ffffff);
+            border-radius: 12px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(255, 255, 255, 0.7);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .algorithm:hover {
+            transform: scale(1.02);
+            background: linear-gradient(145deg, #e6eef7, #ffffff);
         }
         h2 {
-            color: #333;
+            color: #1c3b57;
+            margin-bottom: 10px;
         }
         p {
             font-size: 16px;
-            color: #0e0d0d;
+            color: #333333;
+            line-height: 1.6;
         }
         .button {
-            background-color: #8cb88e;
-            color: rgb(8, 8, 8);
+            background-color: #4caf50;
+            color: #fff;
             padding: 10px 20px;
             border: none;
             cursor: pointer;
             border-radius: 5px;
             text-decoration: none;
             font-size: 16px;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
         .button:hover {
-            background-color: #688869;
+            background-color: #45a049;
+            transform: translateY(-3px);
+        }
+        #dijkstra, #bellman, #floyd {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #eef6fa;
+            border-left: 4px solid #4caf50;
+            animation: fadeIn 0.5s ease;
+            border-radius: 5px;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -53,7 +85,7 @@
         
         <a href="javascript:void(0);" class="button" onclick="viewCode('dijkstra')">View Code Implementation</a>
         
-        <div id="dijkstra" style="display:none;">
+        <div id="dijkstra">
             <a href="https://raw.githubusercontent.com/bhagya518/E-portfolio/main/Dijkstra's%20Algorithm.cpp" target="_blank">Click here to view Dijkstra's Algorithm Code</a>
         </div>
     </div>
@@ -62,13 +94,11 @@
         <h2>Bellman-Ford Algorithm</h2>
         <p>The Bellman-Ford Algorithm is a graph algorithm used to find the shortest path from a single source vertex to all other vertices in a graph. Unlike Dijkstra's Algorithm, the Bellman-Ford Algorithm can handle graphs with negative weight edges. This makes it particularly useful in real-world applications such as e-commerce logistics, where delivery costs or delays may be negative due to special offers, discounts, or refunds.</p>
         
-        <p>The Bellman-Ford Algorithm works by repeatedly relaxing all the edges in the graph. It iterates through the edges, updating the shortest distance for each vertex. If an edge can be relaxed, it is updated, and the algorithm continues for a total of |V| - 1 iterations (where V is the number of vertices). This ensures that the algorithm finds the shortest path even in the presence of negative edge weights. Additionally, the Bellman-Ford Algorithm can detect negative weight cycles, which are a critical feature when dealing with dynamic or changing delivery costs.</p>
-        
         <p>In the context of e-commerce delivery, Bellman-Ford is useful when considering scenarios like unexpected traffic delays or route discounts, which could create negative delays or costs. The ability to handle negative weights ensures that the algorithm can model such real-world conditions and optimize delivery routes effectively.</p>
         
         <a href="javascript:void(0);" class="button" onclick="viewCode('bellman')">View Code Implementation</a>
         
-        <div id="bellman" style="display:none;">
+        <div id="bellman">
             <a href="https://raw.githubusercontent.com/bhagya518/E-portfolio/main/Bellman-ford's%20Algorithm.cpp" target="_blank">Click here to view Bellman-Ford Algorithm Code</a>
         </div>
     </div>
@@ -77,13 +107,11 @@
         <h2>Floyd-Warshall Algorithm</h2>
         <p>The Floyd-Warshall Algorithm is a dynamic programming algorithm used to find the shortest paths between all pairs of nodes in a graph. This algorithm is particularly useful in scenarios where you need to calculate the shortest path between every pair of locations in a network, such as a logistics system where all possible delivery routes need to be considered.</p>
         
-        <p>The Floyd-Warshall Algorithm works by iteratively considering all possible intermediate nodes between every pair of nodes and updating the shortest path between them. It is an example of an algorithm that can handle both directed and undirected graphs and is particularly useful when dealing with dense graphs, where the number of nodes and edges is large. Although the Floyd-Warshall Algorithm has a time complexity of O(n^3), it provides an efficient way to calculate all pairs of shortest paths in one go, making it suitable for comprehensive optimization tasks like delivery route planning.</p>
-        
         <p>In the context of e-commerce logistics, the Floyd-Warshall Algorithm can help optimize delivery routes across multiple locations, providing a global perspective on the shortest possible routes between any two delivery points. This can reduce delivery time, improve customer satisfaction, and enhance operational efficiency, especially in large smart cities with complex road networks.</p>
         
         <a href="javascript:void(0);" class="button" onclick="viewCode('floyd')">View Code Implementation</a>
         
-        <div id="floyd" style="display:none;">
+        <div id="floyd">
             <a href="https://raw.githubusercontent.com/bhagya518/E-portfolio/main/Floyd's%20Algorithm.cpp" target="_blank">Click here to view Floyd-Warshall Algorithm Code</a>
         </div>
     </div>
