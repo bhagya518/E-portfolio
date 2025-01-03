@@ -1,114 +1,201 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Pricing Optimization</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            background-color: #f0f4f8;
-        }
-        h1 {
-            text-align: center;
-            color: #2a4d69;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-        }
-        .algorithm {
-            margin: 20px 0;
-            padding: 15px;
-            background: linear-gradient(145deg, #e8eaf6, #ffffff);
-            border-radius: 12px;
-            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(255, 255, 255, 0.7);
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-        .algorithm:hover {
-            transform: scale(1.03);
-            background: linear-gradient(145deg, #d7d9e1, #ffffff);
-        }
-        h2 {
-            color: #1c3b57;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 16px;
-            color: #333333;
-            line-height: 1.6;
-        }
-        .button {
-            background-color: #4caf50;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 16px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        .button:hover {
-            background-color: #3e8e41;
-            transform: translateY(-3px);
-        }
-        #quickSort, #mergeSort, #heapSort {
-            margin-top: 10px;
-            padding: 10px;
-            background: #e0f7fa;
-            border-radius: 5px;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
-            display: none;
-        }
-    </style>
-</head>
-<body>
-    <h1>Dynamic Pricing Optimization</h1>
-    <p>Dynamic pricing optimization involves adjusting product prices in real-time based on factors like demand, competition, and inventory. Algorithms like Quick Sort, Merge Sort, and Heap Sort can be used to efficiently sort and analyze large datasets, which is crucial for optimizing pricing decisions in an e-commerce environment.</p>
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <iomanip>
+#include <limits>
 
-    <div class="algorithm">
-        <h2>Quick Sort</h2>
-        <p>Quick Sort is an efficient, comparison-based sorting algorithm that works by selecting a "pivot" element and partitioning the array into two subarrays: one with elements smaller than the pivot and one with elements greater. This process is repeated recursively on the subarrays. The average time complexity of Quick Sort is O(n log n), making it suitable for large datasets.</p>
-        
-        <p>In dynamic pricing, Quick Sort can be used to efficiently sort pricing data based on different attributes such as demand, price fluctuations, or competitor pricing. This sorting helps in quickly identifying the optimal pricing strategy for various products, ensuring real-time price adjustments that maximize profits.</p>
-        
-        <a href="javascript:void(0);" class="button" onclick="viewCode('quickSort')">View Code Implementation</a>
-        
-        <div id="quickSort">
-            <a href="https://raw.githubusercontent.com/bhagya518/E-portfolio/main/Quick%20sort.cpp" target="_blank">Click here to view Quick Sort Code</a>
-        </div>
-    </div>
+using namespace std;
 
-    <div class="algorithm">
-        <h2>Merge Sort</h2>
-        <p>Merge Sort is a divide-and-conquer sorting algorithm that splits the array into halves, recursively sorts each half, and then merges them back together. Merge Sort is known for its stable O(n log n) time complexity, which makes it efficient for large datasets and situations where stability (preserving the order of equal elements) is important.</p>
-        
-        <p>In the context of dynamic pricing, Merge Sort can be applied to organize and compare different pricing options, such as customer preferences or competitor price movements, in a structured way. By sorting large datasets efficiently, Merge Sort allows businesses to make informed pricing decisions, even as market conditions change in real-time.</p>
-        
-        <a href="javascript:void(0);" class="button" onclick="viewCode('mergeSort')">View Code Implementation</a>
-        
-        <div id="mergeSort">
-            <a href="https://raw.githubusercontent.com/bhagya518/E-portfolio/main/Merge%20sort.cpp" target="_blank">Click here to view Merge Sort Code</a>
-        </div>
-    </div>
+// Structure to hold gadget data
+struct Gadget {
+    string name;
+    int salesCount;
+    double price;
+};
 
-    <div class="algorithm">
-        <h2>Heap Sort</h2>
-        <p>Heap Sort is a comparison-based sorting algorithm that uses a binary heap data structure. It works by first building a max heap or min heap from the input data, then repeatedly extracting the largest or smallest element and reconstructing the heap until the entire array is sorted. Heap Sort has a time complexity of O(n log n), making it efficient for sorting large datasets.</p>
-        
-        <p>For dynamic pricing, Heap Sort can be used to prioritize products or categories that need immediate price adjustments based on certain criteria, such as stock levels or urgent demand. The heap data structure allows for quick access to the highest (or lowest) priority item, enabling rapid price changes in response to market dynamics.</p>
-        
-        <a href="javascript:void(0);" class="button" onclick="viewCode('heapSort')">View Code Implementation</a>
-        
-        <div id="heapSort">
-            <a href="https://raw.githubusercontent.com/bhagya518/E-portfolio/main/Heap%20sort.cpp" target="_blank">Click here to view Heap Sort Code</a>
-        </div>
-    </div>
+// Quick Sort partition function
+int partition(vector<Gadget>& gadgets, int low, int high) {
+    int pivot = gadgets[high].salesCount; // Pivot is the salesCount of the last element
+    int i = low - 1;
 
-    <script>
-        function viewCode(algorithm) {
-            const element = document.getElementById(algorithm);
-            element.style.display = element.style.display === "none" ? "block" : "none";
+    for (int j = low; j < high; ++j) {
+        if (gadgets[j].salesCount <= pivot) {
+            ++i;
+            swap(gadgets[i], gadgets[j]);
         }
-    </script>
-</body>
-</html>
+    }
+    swap(gadgets[i + 1], gadgets[high]);
+    return i + 1;
+}
+
+// Quick Sort function
+void quickSort(vector<Gadget>& gadgets, int low, int high) {
+    if (low < high) {
+        int pi = partition(gadgets, low, high);
+        quickSort(gadgets, low, pi - 1);
+        quickSort(gadgets, pi + 1, high);
+    }
+}
+
+// Function to display all gadgets
+void displayGadgets(const vector<Gadget>& gadgets) {
+    if (gadgets.empty()) {
+        cout << "No gadgets available.\n";
+        return;
+    }
+
+    cout << "\nGadgets List:\n";
+    cout << "Name\t\tSalesCount\tPrice\n";
+    for (const auto& gadget : gadgets) {
+        cout << gadget.name << "\t\t" << gadget.salesCount
+             << "\t\t" << fixed << setprecision(2) << gadget.price << "\n";
+    }
+}
+
+// Function to increment or decrement prices
+void adjustPrices(vector<Gadget>& gadgets, bool increment) {
+    // Sort gadgets by sales count before applying the operation
+    quickSort(gadgets, 0, gadgets.size() - 1);
+    displayGadgets(gadgets); // Show sorted list to users
+
+    string name;
+    cout << "Enter gadget name to adjust price (type 'done' to finish): ";
+    while (cin >> name && name != "done") {
+        bool found = false;
+        for (auto& gadget : gadgets) {
+            if (gadget.name == name) {
+                double adjustment = gadget.price * (gadget.salesCount / 100.0);
+                if (increment) {
+                    gadget.price += adjustment;
+                    cout << "Price incremented for " << gadget.name << "\n";
+                } else {
+                    gadget.price -= adjustment;
+                    if (gadget.price < 0) gadget.price = 0;
+                    cout << "Price decremented for " << gadget.name << "\n";
+                }
+                found = true;
+                break;
+            }
+        }
+        if (!found) cout << "Gadget " << name << " not found!\n";
+        cout << "Enter another gadget name (or 'done' to finish): ";
+    }
+}
+
+// Other Functions (Add, Search, Remove, Apply Discount) remain the same
+void addGadget(vector<Gadget>& gadgets) {
+    Gadget gadget;
+    cout << "Enter gadget name: ";
+    cin.ignore();
+    getline(cin, gadget.name);
+    cout << "Enter sales count: ";
+    cin >> gadget.salesCount;
+    cout << "Enter price: ";
+    cin >> gadget.price;
+    gadgets.push_back(gadget);
+    cout << "Gadget added successfully.\n";
+}
+
+void searchGadget(const vector<Gadget>& gadgets, const string& name) {
+    for (const auto& gadget : gadgets) {
+        if (gadget.name == name) {
+            cout << "Gadget found: " << gadget.name
+                 << ", Sales Count: " << gadget.salesCount
+                 << ", Price: " << fixed << setprecision(2) << gadget.price << "\n";
+            return;
+        }
+    }
+    cout << "Gadget not found!\n";
+}
+
+void removeLowSales(vector<Gadget>& gadgets, int threshold) {
+    size_t originalSize = gadgets.size();
+    gadgets.erase(
+        remove_if(gadgets.begin(), gadgets.end(), [threshold](const Gadget& g) {
+            return g.salesCount < threshold;
+        }),
+        gadgets.end()
+    );
+    if (gadgets.size() < originalSize)
+        cout << "Gadgets with sales count below " << threshold << " have been removed.\n";
+    else
+        cout << "No gadgets met the removal criteria.\n";
+}
+
+void applyDiscount(vector<Gadget>& gadgets, double discountPercentage) {
+    for (auto& gadget : gadgets) {
+        gadget.price -= gadget.price * (discountPercentage / 100.0);
+        if (gadget.price < 0) gadget.price = 0;
+    }
+    cout << "Discount of " << discountPercentage << "% applied to all gadgets.\n";
+}
+
+int main() {
+    vector<Gadget> gadgets = {
+        {"Smartphone", 50, 299.99}, {"Tablet", 30, 199.99}, {"Laptop", 20, 999.99},
+        {"Smartwatch", 70, 149.99}, {"Headphones", 80, 89.99}, {"Camera", 15, 499.99},
+        {"Speaker", 60, 79.99}, {"Monitor", 25, 199.99}, {"Keyboard", 40, 49.99},
+        {"Mouse", 45, 29.99}, {"Drone", 10, 599.99}, {"Projector", 5, 449.99},
+        {"PowerBank", 90, 39.99}, {"Charger", 100, 19.99}, {"Router", 35, 129.99}
+    };
+
+    int choice;
+
+    while (true) {
+        cout << "\n--- Gadget Management System ---\n";
+        cout << "1. Display All Gadgets\n";
+        cout << "2. Search Gadget by Name\n";
+        cout << "3. Increment Prices for Selected Gadgets\n";
+        cout << "4. Decrement Prices for Selected Gadgets\n";
+        cout << "5. Add New Gadget\n";
+        cout << "6. Remove Gadgets with Low Sales Count\n";
+        cout << "7. Apply Discount to All Gadgets\n";
+        cout << "8. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                displayGadgets(gadgets);
+                break;
+            case 2: {
+                string name;
+                cout << "Enter gadget name to search: ";
+                cin.ignore();
+                getline(cin, name);
+                searchGadget(gadgets, name);
+                break;
+            }
+            case 3:
+                adjustPrices(gadgets, true);
+                break;
+            case 4:
+                adjustPrices(gadgets, false);
+                break;
+            case 5:
+                addGadget(gadgets);
+                break;
+            case 6: {
+                int threshold;
+                cout << "Enter sales count threshold: ";
+                cin >> threshold;
+                removeLowSales(gadgets, threshold);
+                break;
+            }
+            case 7: {
+                double discountPercentage;
+                cout << "Enter discount percentage: ";
+                cin >> discountPercentage;
+                applyDiscount(gadgets, discountPercentage);
+                break;
+            }
+            case 8:
+                cout << "Exiting program. Goodbye!\n";
+                return 0;
+            default:
+                cout << "Invalid choice! Please try again.\n";
+        }
+    }
+    return 0;
+}
