@@ -3,41 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Efficient Inventory Management</title>
+    <title>Dynamic Pricing Optimization</title>  
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 40px;
-            background-color: #f5f7fa;
+            background-color: #f0f4f8;
         }
         h1 {
             text-align: center;
-            color: #2c3e50;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            color: #2a4d69;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
         }
         .algorithm {
             margin: 20px 0;
             padding: 15px;
-            background: linear-gradient(145deg, #e8eff5, #ffffff);
+            background: linear-gradient(145deg, #e8eaf6, #ffffff);
             border-radius: 12px;
-            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(255, 255, 255, 0.8);
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(255, 255, 255, 0.7);
             transition: transform 0.3s ease, background-color 0.3s ease;
         }
         .algorithm:hover {
             transform: scale(1.03);
-            background: linear-gradient(145deg, #d6e1ed, #ffffff);
+            background: linear-gradient(145deg, #d7d9e1, #ffffff);
         }
         h2 {
-            color: #34495e;
-            margin-bottom: 10px;
+            color: #1c3b57;
         }
         p {
             font-size: 16px;
-            color: #2d3436;
+            color: #333333;
             line-height: 1.6;
         }
         .button {
-            background-color: #3498db;
+            background-color: #4caf50;
             color: #fff;
             padding: 10px 20px;
             border: none;
@@ -48,67 +47,31 @@
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
         .button:hover {
-            background-color: #2e86c1;
+            background-color: #3e8e41;
             transform: translateY(-3px);
-        }
-        #bubbleSort, #selectionSort, #binarySearch {
-            margin-top: 10px;
-            padding: 10px;
-            background: #e0f7fa;
-            border-radius: 5px;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
-            display: none;
         }
     </style>
 </head>
 <body>
-    <h1>Efficient Inventory Management</h1>
-    <p>Efficient inventory management predicts demand to maintain optimal stock levels and avoid overstocking or understocking. Algorithms like Bubble Sort, Selection Sort, and Binary Search can analyze and organize inventory data effectively.</p>
+    <h1>Customer Segmentation</h1>
+    <p>Customer segmentation is the process of grouping customers based on similar characteristics, such as buying behavior, demographics, or preferences, to improve marketing strategies and customer experience. Algorithms like Bubble Sort, Selection Sort, and Binary Search are essential for efficiently analyzing and organizing customer data.</p>
 
-    <div class="algorithm">
-        <h2>Bubble Sort</h2>
-        <p>Bubble Sort is a simple comparison-based sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. With a time complexity of O(n²), it is suitable for small datasets.</p>
+        <p><strong>Bubble Sort</strong> is a simple comparison-based sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. With a time complexity of O(n²), it is suitable for small datasets.</p>
         
-        <p>In inventory management, Bubble Sort can be used for sorting product quantities or demand patterns to identify outliers or prioritize restocking needs in smaller datasets.</p>
+        <p>In customer segmentation, Bubble Sort can be used for sorting product quantities or demand patterns to identify outliers or prioritize restocking needs in smaller datasets.</p>
         
-        <a href="javascript:void(0);" class="button" onclick="viewCode('bubbleSort')">View Code Implementation</a>
         
-        <div id="bubbleSort">
-            <a href="https://raw.githubusercontent.com/bhagya518/E-portfolio/main/Bubble%20sort.cpp" target="_blank">Click here to view Bubble Sort Code</a>
-        </div>
-    </div>
 
-    <div class="algorithm">
-        <h2>Selection Sort</h2>
-        <p>Selection Sort is a simple sorting algorithm that divides the dataset into a sorted and an unsorted section. It repeatedly selects the smallest (or largest) element from the unsorted section and moves it to the sorted section. It has a time complexity of O(n²).</p>
+      <p><strong>selection Sort</strong> is a simple sorting algorithm that divides the dataset into a sorted and an unsorted section. It repeatedly selects the smallest (or largest) element from the unsorted section and moves it to the sorted section. It has a time complexity of O(n²).</p>
         
         <p>In the context of inventory management, Selection Sort can organize inventory data by stock levels, ensuring that low-stock items are identified and prioritized for restocking.</p>
-        
-        <a href="javascript:void(0);" class="button" onclick="viewCode('selectionSort')">View Code Implementation</a>
-        
-        <div id="selectionSort">
-            <a href="https://raw.githubusercontent.com/bhagya518/E-portfolio/main/Selection%20sort.cpp" target="_blank">Click here to view Selection Sort Code</a>
-        </div>
     </div>
 
-    <div class="algorithm">
-        <h2>Binary Search</h2>
-        <p>Binary Search is an efficient searching algorithm that works on sorted datasets. It repeatedly divides the search interval in half until the target value is found or the interval is empty, with a time complexity of O(log n).</p>
+   <p><strong>Binary search</strong> is an efficient searching algorithm that works on sorted datasets. It repeatedly divides the search interval in half until the target value is found or the interval is empty, with a time complexity of O(log n).</p>
         
         <p>For inventory management, Binary Search can quickly locate specific product data, such as stock levels or reorder thresholds, enabling faster decision-making in real-time inventory systems.</p>
-        
-        <a href="javascript:void(0);" class="button" onclick="viewCode('binarySearch')">View Code Implementation</a>
-        
-        <div id="binarySearch">
-            <a href="https://raw.githubusercontent.com/bhagya518/E-portfolio/main/Binary%20search.cpp" target="_blank">Click here to view Binary Search Code</a>
-        </div>
     </div>
-
-    <script>
-        function viewCode(algorithm) {
-            const element = document.getElementById(algorithm);
-            element.style.display = element.style.display === "none" ? "block" : "none";
-        }
-    </script>
+        <a href="https://raw.githubusercontent.com/bhagya518/E-portfolio/main/business4.cpp" target="_blank" class="button">View code</a>
+    </div>
 </body>
 </html>
