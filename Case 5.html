@@ -63,24 +63,21 @@
 </head>
 <body>
    <h1>Fraud Detection</h1>
-<p>Fraud detection involves analyzing transaction data to identify irregular patterns that indicate fraudulent activities. Techniques like Depth-First Search (DFS) for cycle detection and analyzing in-degree can help detect suspicious patterns and uncover fraud.</p>
+   <p>Fraud detection involves analyzing transaction data to identify irregular patterns that indicate fraudulent activities. Techniques like Depth-First Search (DFS) for cycle detection and analyzing in-degree can help detect suspicious patterns and uncover fraud.</p>
 
-<div class="algorithm">
- 
-    <p>Depth-First Search (DFS) is a graph traversal algorithm used to explore all the vertices of a graph. For fraud detection, DFS can be applied to identify cycles in a transaction network. A cycle indicates a situation where transactions could be forming a closed loop, which is a common trait in fraudulent activities. If DFS detects a cycle in the graph of transactions, it suggests that there might be fraudulent behavior occurring in the network, such as money laundering or collusion between multiple entities.</p>
+   <div class="algorithm">
+      <p>Depth-First Search (DFS) is a graph traversal algorithm used to explore all the vertices of a graph. For fraud detection, DFS can be applied to identify cycles in a transaction network. A cycle indicates a situation where transactions could be forming a closed loop, which is a common trait in fraudulent activities. If DFS detects a cycle in the graph of transactions, it suggests that there might be fraudulent behavior occurring in the network, such as money laundering or collusion between multiple entities.</p>
 
-   
-    <p>In-degree refers to the number of incoming edges to a vertex in a directed graph. In the context of fraud detection, in-degree can be used to identify unusually high numbers of incoming transactions to a single entity, which could indicate potential fraudulent activity. By analyzing the in-degree of nodes in a transaction graph, one can identify entities that are the focal point of numerous transactions, which may warrant further investigation for fraudulent activities.</p>
+      <p>In-degree refers to the number of incoming edges to a vertex in a directed graph. In the context of fraud detection, in-degree can be used to identify unusually high numbers of incoming transactions to a single entity, which could indicate potential fraudulent activity. By analyzing the in-degree of nodes in a transaction graph, one can identify entities that are the focal point of numerous transactions, which may warrant further investigation for fraudulent activities.</p>
 
-    <a href="https://raw.githubusercontent.com/bhagya518/E-portfolio/main/business5.cpp" target="_blank"> class="button">View code</a>
-</div>
+      <a href="https://raw.githubusercontent.com/bhagya518/E-portfolio/main/business5.cpp" target="_blank" class="button">View code</a>
+   </div>
 
-
-    <script>
-        function viewCode(algorithm) {
-            const element = document.getElementById(algorithm);
-            element.style.display = element.style.display === "none" ? "block" : "none";
-        }
-    </script>
+   <script>
+      function viewCode(algorithm) {
+          const element = document.getElementById(algorithm);
+          element.style.display = element.style.display === "none" ? "block" : "none";
+      }
+   </script>
 </body>
 </html>
