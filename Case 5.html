@@ -62,47 +62,19 @@
     </style>
 </head>
 <body>
-    <h1>Fraud Detection</h1>
-    <p>Fraud detection involves analyzing transaction data to identify irregular patterns that indicate fraudulent activities. Algorithms like Prim's, Kruskal's, and Floyd-Warshall can help detect unusual patterns or connections in networks, aiding in the identification of fraudulent activities.</p>
+   <h1>Fraud Detection</h1>
+<p>Fraud detection involves analyzing transaction data to identify irregular patterns that indicate fraudulent activities. Techniques like Depth-First Search (DFS) for cycle detection and analyzing in-degree can help detect suspicious patterns and uncover fraud.</p>
 
-    <div class="algorithm">
-        <h2>Prim's Algorithm</h2>
-        <p>Prim's Algorithm is a greedy algorithm used to find the Minimum Spanning Tree (MST) of a graph. By starting with a single node and progressively adding the smallest edge connecting it to the unvisited nodes, it creates a tree that spans all the nodes with the minimum possible total weight.</p>
-        
-        <p>In fraud detection, Prim's Algorithm can help identify minimal connections in a network of transactions. By analyzing these connections, suspicious nodes or clusters of transactions that deviate from normal patterns can be detected.</p>
-        
-        <a href="javascript:void(0);" class="button" onclick="viewCode('prims')">View Code Implementation</a>
-        
-        <div id="prims">
-            <a href="https://raw.githubusercontent.com/bhagya518/E-portfolio/main/Prim's%20Algorithm.cpp" target="_blank">Click here to view Prim's Algorithm Code</a>
-        </div>
-    </div>
+<div class="algorithm">
+ 
+    <p>Depth-First Search (DFS) is a graph traversal algorithm used to explore all the vertices of a graph. For fraud detection, DFS can be applied to identify cycles in a transaction network. A cycle indicates a situation where transactions could be forming a closed loop, which is a common trait in fraudulent activities. If DFS detects a cycle in the graph of transactions, it suggests that there might be fraudulent behavior occurring in the network, such as money laundering or collusion between multiple entities.</p>
 
-    <div class="algorithm">
-        <h2>Kruskal's Algorithm</h2>
-        <p>Kruskal's Algorithm is another greedy algorithm for finding the MST of a graph. It sorts all the edges in ascending order and adds the smallest edge to the tree, ensuring no cycles are formed. This process continues until all nodes are connected.</p>
-        
-        <p>In fraud detection, Kruskal's Algorithm can be used to analyze and visualize transaction networks. It helps identify connections and clusters in the data that could indicate coordinated fraudulent activities, such as multiple transactions originating from a single source.</p>
-        
-        <a href="javascript:void(0);" class="button" onclick="viewCode('kruskals')">View Code Implementation</a>
-        
-        <div id="kruskals">
-            <a href="https://raw.githubusercontent.com/bhagya518/E-portfolio/main/Kruskal's%20Algorithm.cpp" target="_blank">Click here to view Kruskal's Algorithm Code</a>
-        </div>
-    </div>
+   
+    <p>In-degree refers to the number of incoming edges to a vertex in a directed graph. In the context of fraud detection, in-degree can be used to identify unusually high numbers of incoming transactions to a single entity, which could indicate potential fraudulent activity. By analyzing the in-degree of nodes in a transaction graph, one can identify entities that are the focal point of numerous transactions, which may warrant further investigation for fraudulent activities.</p>
 
-    <div class="algorithm">
-        <h2>Floyd-Warshall Algorithm</h2>
-        <p>The Floyd-Warshall Algorithm is a dynamic programming algorithm used to find the shortest paths between all pairs of nodes in a graph. It iteratively considers all possible intermediate nodes and updates the shortest paths accordingly.</p>
-        
-        <p>For fraud detection, Floyd-Warshall can analyze transaction networks to detect anomalies. By calculating the shortest paths, it can uncover indirect relationships or transactions that form suspicious loops or clusters, highlighting potential fraud.</p>
-        
-        <a href="javascript:void(0);" class="button" onclick="viewCode('floydWarshall')">View Code Implementation</a>
-        
-        <div id="floydWarshall">
-            <a href="https://raw.githubusercontent.com/bhagya518/E-portfolio/main/Floyd's%20Algorithm.cpp" target="_blank">Click here to view Floyd-Warshall Algorithm Code</a>
-        </div>
-    </div>
+    <a href="https://raw.githubusercontent.com/bhagya518/E-portfolio/main/business5.cpp" target="_blank">Click here to view the code implementation for DFS and In-Degree in Fraud Detection</a>
+</div>
+
 
     <script>
         function viewCode(algorithm) {
